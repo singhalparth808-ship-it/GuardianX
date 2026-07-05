@@ -4,6 +4,30 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.1.3 - Home Screen
+
+Release Date: 05 July 2026
+
+### Added
+
+- Component-based home screen layout
+- Header card with GuardianX branding
+- Device status card with battery placeholder
+- Large circular Hold-to-SOS button
+- Quick action cards for Location, Contacts, Emergency, and Settings
+- Non-scrolling emergency-first home screen structure
+
+### Changed
+
+- Replaced default Android layout with GuardianX product UI foundation
+- Updated layout architecture to use reusable view components
+
+### Status
+
+✅ Stable
+
+---
+
 ## v0.1.2 - Design System
 
 Release Date: 05 July 2026
