@@ -4,6 +4,22 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.1.4 - Home Screen Padding Fix
+
+Release Date: 05 July 2026
+
+### Fixed
+
+- Fixed home screen cards touching screen edges
+- Removed Edge-to-Edge padding override from MainActivity
+- Restored XML-defined layout padding
+
+### Status
+
+✅ Stable
+
+---
+
 ## v0.1.3 - Home Screen
 
 Release Date: 05 July 2026
