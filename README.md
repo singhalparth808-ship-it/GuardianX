@@ -27,7 +27,7 @@ GuardianX aims to provide fast, reliable, and accessible personal safety through
 
 ## Current Version
 
-v0.1.4
+v0.2
 
 Status_: 🟢 Active Development
 

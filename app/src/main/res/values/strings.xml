@@ -12,11 +12,17 @@
 
     <string name="location">Location</string>
 
+    <string name="retrying">Retrying...</string>
+
     <string name="contacts">Contacts</string>
 
     <string name="emergency">Emergency</string>
 
     <string name="battery_unknown">--%</string>
+
+    <string name="scanning">Scanning...</string>
+    <string name="guardian_ready">Guardian Ready</string>
+    <string name="guardian_not_found">Guardian device not found</string>
 
     <string name="settings">Settings</string>
 

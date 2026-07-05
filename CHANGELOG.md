@@ -4,6 +4,34 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.2 - BLE Foundation
+
+Release Date: 05 July 2026
+
+### Added
+
+- Bluetooth permissions for Android
+- BLE constants for Guardian firmware
+- BLE callback interface
+- BLEManager for scanning, connecting, service discovery, and notifications
+- Automatic scan on app launch
+- Bluetooth enable prompt
+- Bluetooth state handling while app is open
+- Guardian device not found handling
+- SOS notification reception from ESP32 hardware button
+
+### Changed
+
+- MainActivity now connects UI with BLEManager
+- Guardian status card now updates based on BLE state
+
+### Status
+
+✅ Stable
+✅ Hardware SOS received successfully
+
+---
+
 ## v0.1.4 - Home Screen Padding Fix
 
 Release Date: 05 July 2026
