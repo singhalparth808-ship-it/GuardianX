@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Padding -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+
+    <!-- Radius -->
+    <dimen name="card_radius">18dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="card_elevation">4dp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button_height">56dp</dimen>
+
+    <!-- SOS -->
+    <dimen name="sos_button_size">180dp</dimen>
+
+</resources>

@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- GuardianX Brand -->
+    <color name="guardian_primary">#1565C0</color>
+    <color name="guardian_primary_dark">#0D47A1</color>
+
+    <color name="guardian_success">#2E7D32</color>
+    <color name="guardian_warning">#F9A825</color>
+    <color name="guardian_error">#D32F2F</color>
+
+    <!-- Background -->
+    <color name="background">#F5F7FA</color>
+
+    <!-- Cards -->
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+
 </resources>
