@@ -43,9 +43,8 @@
 
 
     <!-- SOS Button -->
-
     <include
-        android:id="@+id/sosButton"
+        android:id="@+id/sosSection"
 
         layout="@layout/view_sos_button"
 

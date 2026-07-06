@@ -14,6 +14,13 @@
 
     <string name="retrying">Retrying...</string>
 
+    <string name="hold_release_to_cancel">Hold... Release to cancel</string>
+    <string name="app_sos_triggered">SOS triggered from app</string>
+
+    <string name="sos_alert_title">Emergency Alert</string>
+    <string name="sos_alert_message">SOS received from Guardian device</string>
+    <string name="sos_received">SOS received from Guardian</string>
+
     <string name="contacts">Contacts</string>
 
     <string name="emergency">Emergency</string>

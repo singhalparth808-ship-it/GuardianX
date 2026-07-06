@@ -20,6 +20,13 @@ import android.util.Log;
 import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothProfile;
 import android.bluetooth.BluetoothGattService;
+import android.bluetooth.le.ScanFilter;
+import android.bluetooth.le.ScanRecord;
+import android.bluetooth.le.ScanSettings;
+import android.os.ParcelUuid;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import androidx.core.content.ContextCompat;
 
@@ -111,7 +118,20 @@ public class BLEManager {
 
         Log.d(TAG, "BLE scan started");
 
-        bluetoothLeScanner.startScan(scanCallback);
+        List<ScanFilter> filters = new ArrayList<>();
+
+        filters.add(
+                new ScanFilter.Builder()
+                        .setServiceUuid(new ParcelUuid(BLEConstants.SERVICE_UUID))
+                        .build()
+        );
+
+        ScanSettings settings =
+                new ScanSettings.Builder()
+                        .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
+                        .build();
+
+        bluetoothLeScanner.startScan(filters, settings, scanCallback);
 
         handler.postDelayed(() -> {
             if (isScanning) {
@@ -155,13 +175,24 @@ public class BLEManager {
 
             String deviceName = device.getName();
 
-            if (deviceName == null) {
-                return;
+            ScanRecord scanRecord = result.getScanRecord();
+
+            if (deviceName == null && scanRecord != null) {
+                deviceName = scanRecord.getDeviceName();
             }
 
             Log.d(TAG, "Found BLE device: " + deviceName);
 
-            if (BLEConstants.DEVICE_NAME.equals(deviceName)) {
+            boolean nameMatches = BLEConstants.DEVICE_NAME.equals(deviceName);
+
+            boolean serviceMatches =
+                    scanRecord != null
+                            && scanRecord.getServiceUuids() != null
+                            && scanRecord.getServiceUuids().contains(
+                            new ParcelUuid(BLEConstants.SERVICE_UUID)
+                    );
+
+            if (nameMatches || serviceMatches) {
 
                 Log.d(TAG, "Guardian device found");
 

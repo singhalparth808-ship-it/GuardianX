@@ -4,6 +4,33 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.3 - SOS Engine
+
+Release Date: 05 July 2026
+
+### Added
+
+- Emergency notification system
+- Phone vibration feedback for SOS
+- Hardware SOS handling through BLE
+- In-app Hold-to-SOS button
+- Shared SOS trigger flow for hardware and app SOS
+- Bluetooth enable dialog
+- Location enable dialog for BLE scanning reliability
+
+### Changed
+
+- SOS handling moved into a common triggerSOS flow
+- MainActivity now responds to both hardware and app SOS events
+
+### Status
+
+✅ Stable
+✅ Hardware SOS working
+✅ In-app SOS working
+
+---
+
 ## v0.2 - BLE Foundation
 
 Release Date: 05 July 2026
