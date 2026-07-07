@@ -24,6 +24,7 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 - Emergency Toolkit
 - Direct Emergency Calling
 - Nearby Emergency Locations using Google Maps
+- - Emergency Contacts saved locally
 
 ### Planned
 
@@ -41,7 +42,7 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 
 ## Current Version
 
-v0.4
+v0.5
 
 Status: 🟢 Active Development
 

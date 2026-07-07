@@ -40,6 +40,10 @@
         android:theme="@style/Theme.GuardianX">
 
         <activity
+            android:name=".activities.ContactsActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".activities.LocationActivity"
             android:exported="false" />
 

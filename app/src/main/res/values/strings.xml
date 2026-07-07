@@ -26,6 +26,15 @@
     <string name="nearby_hospital">Nearby Hospital</string>
     <string name="nearby_emergency_locations">Nearby Emergency Locations</string>
 
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="contact_phone">Phone Number</string>
+    <string name="save_contact">Save Contact</string>
+    <string name="saved_contacts">Saved Contacts</string>
+    <string name="no_contacts_saved">No contacts saved yet</string>
+    <string name="contact_saved">Contact saved</string>
+    <string name="enter_contact_details">Please enter name and phone number</string>
+
     <string name="app_sos_triggered">SOS triggered from app</string>
 
     <string name="sos_alert_title">Emergency Alert</string>

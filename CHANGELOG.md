@@ -4,6 +4,33 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.5 - Emergency Contacts
+
+Release Date: 06 July 2026
+
+### Added
+
+- Emergency Contacts screen
+- Contact name input
+- Contact phone number input
+- Save contact button
+- Local contact storage using SharedPreferences
+- Saved contacts display section
+- Home screen Contacts card navigation
+
+### Changed
+
+- Contact input text color improved for readability
+- Contact input hint color improved for readability
+
+### Status
+
+✅ Stable  
+✅ Contacts saving working  
+✅ Contacts persist after app restart
+
+---
+
 ## v0.4 - Emergency Toolkit
 
 Release Date: 06 July 2026

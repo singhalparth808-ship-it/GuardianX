@@ -151,11 +151,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         );
 
         contactsCard.setOnClickListener(view ->
-                android.widget.Toast.makeText(
-                        this,
-                        "Contacts screen coming in v0.4",
-                        android.widget.Toast.LENGTH_SHORT
-                ).show()
+                startActivity(new Intent(this, ContactsActivity.class))
         );
 
         emergencyCard.setOnClickListener(view ->

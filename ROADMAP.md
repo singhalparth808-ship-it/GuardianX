@@ -102,7 +102,7 @@ Status: ✅ Completed
 
 ## v0.5 - Emergency Contacts
 
-Status: Upcoming
+Status: ✅ Completed
 
 - Add Emergency Contacts screen
 - Add contact input UI
