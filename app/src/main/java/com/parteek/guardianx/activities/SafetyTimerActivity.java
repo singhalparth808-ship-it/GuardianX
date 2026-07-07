@@ -202,7 +202,7 @@ public class SafetyTimerActivity extends AppCompatActivity {
                 );
 
                 timerStatusText.setText(
-                        getString(R.string.timer_running) + ": " + timeText
+                        getString(R.string.timer_running_with_time, timeText)
                 );
             }
 

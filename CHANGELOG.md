@@ -4,6 +4,38 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.9 - Demo Polish and Stability
+
+Release Date: 07 July 2026
+
+### Added
+
+- Live location state detection while app is running
+- Location Required popup when Location is turned off during app use
+- Improved full-app stability testing checklist
+
+### Changed
+
+- Moved remaining hardcoded user-facing text into string resources
+- Cleaned Safety Timer countdown text
+- Cleaned Alert History labels
+- Cleaned SOS source labels
+- Improved permission-state handling for demo reliability
+
+### Fixed
+
+- Location popup now appears when Location is turned off while GuardianX is already open
+
+### Status
+
+✅ Stable  
+✅ Full stability test passed  
+✅ Bluetooth state handling working  
+✅ Location state handling working  
+✅ Demo-ready
+
+---
+
 ## v0.8 - Safety Timer
 
 Release Date: 07 July 2026

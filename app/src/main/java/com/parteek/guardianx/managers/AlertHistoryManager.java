@@ -3,6 +3,8 @@ package com.parteek.guardianx.managers;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.parteek.guardianx.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -10,16 +12,18 @@ import java.util.Locale;
 /**
  * Manages local SOS alert history.
  *
- * Version: v0.7
+ * Version: v0.9
  */
 public class AlertHistoryManager {
 
     private static final String PREF_NAME = "guardian_alert_history";
     private static final String KEY_ALERTS = "saved_alerts";
 
+    private final Context context;
     private final SharedPreferences sharedPreferences;
 
     public AlertHistoryManager(Context context) {
+        this.context = context;
         sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
     }
 
@@ -31,12 +35,14 @@ public class AlertHistoryManager {
         ).format(new Date());
 
         String locationStatus = locationIncluded
-                ? "Location sent"
-                : "Location unavailable";
+                ? context.getString(R.string.history_location_sent)
+                : context.getString(R.string.history_location_unavailable);
 
         String alertEntry =
-                "SOS from " + source + "\n"
-                        + time + "\n"
+                context.getString(R.string.history_sos_from, source)
+                        + "\n"
+                        + time
+                        + "\n"
                         + locationStatus;
 
         String existingAlerts = sharedPreferences.getString(KEY_ALERTS, "");

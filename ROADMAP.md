@@ -148,14 +148,16 @@ Status: ✅ Completed
 
 ---
 
-## v0.9 - Device Intelligence
+## v0.9 - Demo Polish and Stability
 
-Status: Upcoming
+Status: ✅ Completed
 
-- Battery monitoring
-- Battery warning notifications
-- Device health status
-- Last seen status
+- Cleaned hardcoded strings
+- Improved permission handling
+- Added live Bluetooth state response
+- Added live Location state response
+- Completed full feature test pass
+- Prepared app for demo readiness
 
 ---
 

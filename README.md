@@ -36,6 +36,8 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 - Custom Safety Timer
 - Background Safety Timer
 - Automatic SOS from Safety Timer
+- Demo polish and stability improvements
+- Live Bluetooth and Location state handling
 
 ### Planned
 
@@ -53,7 +55,7 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 
 ## Current Version
 
-v0.8
+v0.9
 
 Status: 🟢 Active Development
 

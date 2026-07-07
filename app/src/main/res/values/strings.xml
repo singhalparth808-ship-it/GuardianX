@@ -93,5 +93,24 @@
     <string name="custom_timer_hint">Enter minutes</string>
     <string name="start_custom_timer">Start Custom Timer</string>
     <string name="invalid_timer">Please enter a valid timer duration</string>
+    <string name="bluetooth_required_title">Bluetooth Required</string>
+    <string name="bluetooth_required_message">GuardianX needs Bluetooth to connect with your Guardian device.</string>
+    <string name="turn_on_bluetooth">Turn On Bluetooth</string>
+
+    <string name="location_required_title">Location Required</string>
+    <string name="location_required_message">GuardianX needs Location enabled to scan and connect with your Guardian device.</string>
+    <string name="open_location_settings">Open Location Settings</string>
+
+    <string name="cancel">Cancel</string>
+
+    <string name="bluetooth_turned_off">Bluetooth is turned off</string>
+    <string name="location_turned_off">Location is turned off</string>
+    <string name="timer_running_with_time">Safety timer running: %1$s</string>
+    <string name="history_location_sent">Location sent</string>
+    <string name="history_location_unavailable">Location unavailable</string>
+    <string name="history_sos_from">SOS from %1$s</string>
+    <string name="source_safety_timer">Safety Timer</string>
+    <string name="source_hardware">Hardware</string>
+    <string name="source_app">App</string>
 
 </resources>

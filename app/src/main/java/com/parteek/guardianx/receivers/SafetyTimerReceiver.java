@@ -36,7 +36,10 @@ public class SafetyTimerReceiver extends BroadcastReceiver {
         AlertHistoryManager alertHistoryManager =
                 new AlertHistoryManager(context);
 
-        alertHistoryManager.saveAlert("Safety Timer", locationIncluded);
+        alertHistoryManager.saveAlert(
+                context.getString(R.string.source_safety_timer),
+                locationIncluded
+        );
 
         SMSManager smsManager = new SMSManager(context);
 

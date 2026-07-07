@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.IntentFilter;
 import com.parteek.guardianx.utils.NotificationHelper;
 import com.parteek.guardianx.managers.SMSManager;
+import android.location.LocationManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -74,6 +75,10 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
 
         IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
         registerReceiver(bluetoothStateReceiver, filter);
+        IntentFilter locationFilter =
+                new IntentFilter(LocationManager.PROVIDERS_CHANGED_ACTION);
+
+        registerReceiver(locationStateReceiver, locationFilter);
 
         bluetoothEnableLauncher =
                 registerForActivityResult(
@@ -120,13 +125,13 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         locationDialogShowing = true;
 
         new androidx.appcompat.app.AlertDialog.Builder(this)
-                .setTitle("Location Required")
-                .setMessage("GuardianX needs Location enabled to scan and connect with your Guardian device.")
-                .setPositiveButton("Open Location Settings", (dialog, which) -> {
+                .setTitle(R.string.location_required_title)
+                .setMessage(R.string.location_required_message)
+                .setPositiveButton(R.string.open_location_settings, (dialog, which) -> {
                     Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                     startActivity(intent);
                 })
-                .setNegativeButton("Cancel", (dialog, which) -> {
+                .setNegativeButton(R.string.cancel, (dialog, which) -> {
                     locationDialogShowing = false;
                 })
                 .setOnDismissListener(dialog -> {
@@ -237,9 +242,9 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         String source;
 
         if (message.equals(getString(R.string.sos_received))) {
-            source = "Hardware";
+            source = getString(R.string.source_hardware);
         } else {
-            source = "App";
+            source = getString(R.string.source_app);
         }
 
         boolean locationIncluded =
@@ -300,7 +305,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
             headerStatus.setText(R.string.disconnected);
             headerStatus.setTextColor(ContextCompat.getColor(this, R.color.guardian_error));
 
-            deviceStatusText.setText("Location is turned off");
+            deviceStatusText.setText(R.string.location_turned_off);
             deviceStatusText.setTextColor(ContextCompat.getColor(this, R.color.guardian_error));
 
             showLocationEnableDialog();
@@ -373,7 +378,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
                                 R.color.guardian_error
                         ));
 
-                        deviceStatusText.setText("Bluetooth is turned off");
+                        deviceStatusText.setText(R.string.bluetooth_turned_off);
                         deviceStatusText.setTextColor(ContextCompat.getColor(
                                 MainActivity.this,
                                 R.color.guardian_error
@@ -404,6 +409,43 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
                         startBleConnection();
                     }
                 }
+            }
+        }
+    };
+
+    private final BroadcastReceiver locationStateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            if (LocationManager.PROVIDERS_CHANGED_ACTION.equals(intent.getAction())) {
+
+                runOnUiThread(() -> {
+
+                    if (!isLocationEnabled()) {
+
+                        headerStatus.setText(R.string.disconnected);
+                        headerStatus.setTextColor(ContextCompat.getColor(
+                                MainActivity.this,
+                                R.color.guardian_error
+                        ));
+
+                        deviceStatusText.setText(R.string.location_turned_off);
+                        deviceStatusText.setTextColor(ContextCompat.getColor(
+                                MainActivity.this,
+                                R.color.guardian_error
+                        ));
+
+                        showLocationEnableDialog();
+
+                    } else {
+
+                        locationDialogShowing = false;
+
+                        if (PermissionHelper.hasRequiredPermissions(MainActivity.this)) {
+                            startBleConnection();
+                        }
+                    }
+                });
             }
         }
     };
@@ -461,15 +503,15 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         bluetoothDialogShowing = true;
 
         new androidx.appcompat.app.AlertDialog.Builder(this)
-                .setTitle("Bluetooth Required")
-                .setMessage("GuardianX needs Bluetooth to connect with your Guardian device.")
-                .setPositiveButton("Turn On Bluetooth", (dialog, which) -> {
+                .setTitle(R.string.bluetooth_required_title)
+                .setMessage(R.string.bluetooth_required_message)
+                .setPositiveButton(R.string.turn_on_bluetooth, (dialog, which) -> {
                     Intent enableBluetoothIntent =
                             new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
 
                     bluetoothEnableLauncher.launch(enableBluetoothIntent);
                 })
-                .setNegativeButton("Cancel", (dialog, which) -> {
+                .setNegativeButton(R.string.cancel, (dialog, which) -> {
                     bluetoothDialogShowing = false;
                 })
                 .setOnDismissListener(dialog -> {
@@ -487,6 +529,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         }
 
         unregisterReceiver(bluetoothStateReceiver);
+        unregisterReceiver(locationStateReceiver);
     }
 
     @Override
