@@ -20,6 +20,8 @@
     <!-- Buttons -->
     <dimen name="button_height">56dp</dimen>
 
+    <dimen name="emergency_button_height">68dp</dimen>
+
     <!-- SOS -->
     <dimen name="sos_button_size">180dp</dimen>
 

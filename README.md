@@ -8,28 +8,42 @@
 
 GuardianX aims to provide fast, reliable, and accessible personal safety through a wearable BLE device and an intelligent Android application.
 
+GuardianX is being built as a minimal but expandable safety platform. The current version focuses on a reliable college-demo-ready foundation, while future versions will expand into contacts, SMS, location sharing, battery monitoring, secure pairing, and advanced safety workflows.
+
 ---
 
-## Features (Planned)
+## Features
 
-- Hardware SOS Trigger
-- In-App SOS Trigger
+### Completed
+
+- Hardware SOS Trigger through ESP32 BLE
+- In-App Triple-Tap SOS Trigger
 - BLE Auto Connection
-- Live Location Sharing
+- Emergency Notification
+- Phone Vibration Feedback
+- Emergency Toolkit
+- Direct Emergency Calling
+- Nearby Emergency Locations using Google Maps
+
+### Planned
+
 - Emergency Contacts
-- Nearby Police/Hospitals
+- SMS with Location Sharing
+- WhatsApp Sharing
+- Safety Timer
+- Check-In Feature
 - Battery Monitoring
-- Safety Check-In
-- Automatic Calling
+- QR Pairing
+- Alert History
 - Guardian Dashboard
 
 ---
 
 ## Current Version
 
-v0.3
+v0.4
 
-Status_: 🟢 Active Development
+Status: 🟢 Active Development
 
 ---
 
@@ -50,29 +64,3 @@ ui/
     fragments/
 utils/
 widgets/
-```
-
----
-
-## Development Workflow
-
-Every GuardianX release follows this process:
-
-1. Planning
-2. Development
-3. Build Verification
-4. Documentation Update
-5. Git Commit
-6. Release Notes
-
----
-
-## Roadmap
-
-See **ROADMAP.md**
-
----
-
-## Changelog
-
-See **CHANGELOG.md**

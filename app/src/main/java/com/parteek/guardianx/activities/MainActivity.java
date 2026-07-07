@@ -7,12 +7,12 @@ import android.widget.TextView;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
-import android.view.MotionEvent;
 import com.parteek.guardianx.utils.NotificationHelper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import android.view.View;
 
 import com.parteek.guardianx.R;
 import com.parteek.guardianx.ble.BLECallback;
@@ -30,20 +30,27 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
 
     private TextView sosActionButton;
 
+    private View locationCard;
+    private View contactsCard;
+    private View emergencyCard;
+    private View settingsCard;
+
     private boolean locationDialogShowing = false;
-
-    private boolean sosHoldCompleted = false;
-
-    private final Runnable sosHoldRunnable = () -> {
-        sosHoldCompleted = true;
-        triggerSOS(getString(R.string.app_sos_triggered));
-    };
-
     private TextView headerStatus;
     private TextView deviceStatusText;
     private TextView batteryValue;
 
     private boolean bluetoothDialogShowing = false;
+    private int sosClickCount = 0;
+    private long lastSosClickTime = 0;
+
+    private static final long SOS_CLICK_WINDOW_MS = 2000;
+    private static final int REQUIRED_SOS_CLICKS = 3;
+    private final Runnable resetSosClickRunnable = () -> {
+        sosClickCount = 0;
+        lastSosClickTime = 0;
+        sosActionButton.setText(R.string.hold_to_sos);
+    };
 
     private BLEManager bleManager;
 
@@ -127,38 +134,78 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         deviceStatusText = findViewById(R.id.deviceStatusText);
         batteryValue = findViewById(R.id.batteryValue);
         sosActionButton = findViewById(R.id.sosActionButton);
+        locationCard = findViewById(R.id.locationCard);
+        contactsCard = findViewById(R.id.contactsCard);
+        emergencyCard = findViewById(R.id.emergencyCard);
+        settingsCard = findViewById(R.id.settingsCard);
+
+        setupQuickActions();
 
         setupSOSButton();
     }
 
+    private void setupQuickActions() {
+
+        locationCard.setOnClickListener(view ->
+                startActivity(new Intent(this, LocationActivity.class))
+        );
+
+        contactsCard.setOnClickListener(view ->
+                android.widget.Toast.makeText(
+                        this,
+                        "Contacts screen coming in v0.4",
+                        android.widget.Toast.LENGTH_SHORT
+                ).show()
+        );
+
+        emergencyCard.setOnClickListener(view ->
+                startActivity(new Intent(this, EmergencyActivity.class))
+        );
+
+        settingsCard.setOnClickListener(view ->
+                android.widget.Toast.makeText(
+                        this,
+                        "Settings coming soon",
+                        android.widget.Toast.LENGTH_SHORT
+                ).show()
+        );
+    }
+
     private void setupSOSButton() {
 
-        sosActionButton.setOnTouchListener((view, event) -> {
+        sosActionButton.setOnClickListener(view -> {
 
-            switch (event.getAction()) {
+            long currentTime = System.currentTimeMillis();
 
-                case MotionEvent.ACTION_DOWN:
-
-                    sosHoldCompleted = false;
-                    sosActionButton.setText(R.string.hold_release_to_cancel);
-
-                    handler.postDelayed(sosHoldRunnable, 2000);
-
-                    return true;
-
-                case MotionEvent.ACTION_UP:
-                case MotionEvent.ACTION_CANCEL:
-
-                    handler.removeCallbacks(sosHoldRunnable);
-
-                    if (!sosHoldCompleted) {
-                        sosActionButton.setText(R.string.hold_to_sos);
-                    }
-
-                    return true;
+            if (currentTime - lastSosClickTime > SOS_CLICK_WINDOW_MS) {
+                sosClickCount = 0;
             }
 
-            return false;
+            lastSosClickTime = currentTime;
+            sosClickCount++;
+
+            int remainingClicks = REQUIRED_SOS_CLICKS - sosClickCount;
+
+            if (remainingClicks > 0) {
+
+                sosActionButton.setText(
+                        getString(R.string.tap_sos_remaining, remainingClicks)
+                );
+
+                handler.removeCallbacks(resetSosClickRunnable);
+                handler.postDelayed(resetSosClickRunnable, SOS_CLICK_WINDOW_MS);
+
+            } else {
+
+                handler.removeCallbacks(resetSosClickRunnable);
+
+                sosClickCount = 0;
+                lastSosClickTime = 0;
+
+                sosActionButton.setText(R.string.hold_to_sos);
+
+                triggerSOS(getString(R.string.app_sos_triggered));
+            }
         });
     }
 

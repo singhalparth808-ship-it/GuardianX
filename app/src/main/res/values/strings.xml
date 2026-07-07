@@ -8,13 +8,24 @@
 
     <string name="battery">Battery</string>
 
-    <string name="hold_to_sos">Hold to SOS</string>
-
+    <string name="hold_to_sos">Tap 3x for SOS</string>
+    <string name="tap_sos_remaining">Tap %1$d more time(s)</string>
     <string name="location">Location</string>
 
     <string name="retrying">Retrying...</string>
+    <string name="cyber_crime">Cyber Crime - 1930</string>
+    <string name="nearby_fire">Nearby Fire Station</string>
 
-    <string name="hold_release_to_cancel">Hold... Release to cancel</string>
+    <string name="emergency_toolkit">Emergency Toolkit</string>
+    <string name="police">Emergency / Police - 112</string>
+    <string name="ambulance">Ambulance - 108</string>
+    <string name="fire">Fire - 101</string>
+    <string name="women_helpline">Women Helpline - 1091</string>
+    <string name="child_helpline">Child Helpline - 1098</string>
+    <string name="nearby_police">Nearby Police Station</string>
+    <string name="nearby_hospital">Nearby Hospital</string>
+    <string name="nearby_emergency_locations">Nearby Emergency Locations</string>
+
     <string name="app_sos_triggered">SOS triggered from app</string>
 
     <string name="sos_alert_title">Emergency Alert</string>

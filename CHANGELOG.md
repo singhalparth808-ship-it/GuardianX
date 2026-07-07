@@ -4,6 +4,45 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.4 - Emergency Toolkit
+
+Release Date: 06 July 2026
+
+### Added
+
+- Emergency Toolkit screen
+- Direct call support for emergency helplines
+- Emergency / Police call button
+- Ambulance call button
+- Fire emergency call button
+- Women helpline call button
+- Child helpline call button
+- Cyber crime helpline call button
+- CALL_PHONE permission handling
+- Safe fallback to dialer if direct call fails
+- Telephony feature declaration in AndroidManifest
+- LocationActivity for nearby emergency locations
+- Nearby Police Station search using Google Maps
+- Nearby Fire Station search using Google Maps
+- Nearby Hospital search using Google Maps
+
+### Changed
+
+- Home screen Location button now opens nearby emergency locations instead of current location
+- Nearby emergency places moved from Emergency screen to Location screen
+- Emergency Toolkit now focuses only on direct emergency calling
+- Emergency buttons enlarged for better accessibility
+- SOS activation changed from hold-to-SOS to triple-tap SOS activation
+
+### Status
+
+✅ Stable  
+✅ Emergency calls working  
+✅ Nearby location search working  
+✅ Triple-tap app SOS working
+
+---
+
 ## v0.3 - SOS Engine
 
 Release Date: 05 July 2026
