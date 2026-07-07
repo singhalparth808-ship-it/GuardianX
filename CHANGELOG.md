@@ -4,6 +4,28 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.9.1 - Battery Settings Placeholder
+
+Release Date: 07 July 2026
+
+### Added
+
+- Battery Settings screen inside Settings
+- Battery telemetry placeholder
+- Planned battery alert information
+- 50% battery reminder plan
+- 20% low battery warning plan
+- 5% critical battery warning plan
+- Future hourly BLE battery update note
+
+### Status
+
+✅ Stable  
+✅ Battery Settings placeholder working  
+✅ Ready for future firmware battery telemetry
+
+---
+
 ## v0.9 - Demo Polish and Stability
 
 Release Date: 07 July 2026

@@ -16,6 +16,7 @@ import com.parteek.guardianx.R;
 public class SettingsActivity extends AppCompatActivity {
 
     private Button historyButton;
+    private Button batterySettingsButton;
     private Button safetyTimerButton;
 
     @Override
@@ -30,6 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
     private void initializeViews() {
         historyButton = findViewById(R.id.historyButton);
         safetyTimerButton = findViewById(R.id.safetyTimerButton);
+        batterySettingsButton = findViewById(R.id.batterySettingsButton);
     }
 
     private void setupClickListeners() {
@@ -40,6 +42,9 @@ public class SettingsActivity extends AppCompatActivity {
 
         safetyTimerButton.setOnClickListener(view ->
                 startActivity(new Intent(this, SafetyTimerActivity.class))
+        );
+        batterySettingsButton.setOnClickListener(view ->
+                startActivity(new Intent(this, BatterySettingsActivity.class))
         );
     }
 }

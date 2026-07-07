@@ -112,5 +112,14 @@
     <string name="source_safety_timer">Safety Timer</string>
     <string name="source_hardware">Hardware</string>
     <string name="source_app">App</string>
+    <string name="battery_settings">Battery Settings</string>
+    <string name="battery_monitoring">Battery Monitoring</string>
+    <string name="battery_status_placeholder">Battery telemetry will be added in the next hardware firmware version.</string>
+    <string name="battery_current_status">Current Battery: Not available yet</string>
+    <string name="battery_alert_plan">Planned Battery Alerts</string>
+    <string name="battery_alert_50">50% - Battery halfway drained. Charging recommended.</string>
+    <string name="battery_alert_20">20% - Low battery. Please charge.</string>
+    <string name="battery_alert_5">5% - Critical battery. Estimated shutdown time will be shown.</string>
+    <string name="battery_future_note">Future firmware will send battery updates every 1 hour over BLE.</string>
 
 </resources>

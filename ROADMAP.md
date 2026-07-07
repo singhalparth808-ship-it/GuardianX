@@ -161,6 +161,16 @@ Status: ✅ Completed
 
 ---
 
+## v0.9.1 - Battery Settings Placeholder
+
+Status: ✅ Completed
+
+- Added Battery Settings screen
+- Added planned battery alert details
+- Prepared app UI for future battery telemetry
+
+---
+
 ## v1.0 - First Public Demo Release
 
 Status: Upcoming
@@ -173,3 +183,17 @@ Status: Upcoming
 - SMS/location workflow
 - Clean UI
 - GitHub documentation
+
+---
+
+## v1.1 - Device Intelligence
+
+Status: Upcoming
+
+- ESP32 battery voltage reading
+- Hourly BLE battery update
+- Battery percentage display
+- 50%, 20%, and 5% battery alerts
+
+---
+

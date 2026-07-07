@@ -30,7 +30,7 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 - Duplicate contact prevention
 - Contact delete support
 - Local Alert History
-- Hardware/App SOS history tracking 
+- Hardware/App SOS history tracking
 - Settings Hub
 - Safety Timer
 - Custom Safety Timer
@@ -38,24 +38,29 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 - Automatic SOS from Safety Timer
 - Demo polish and stability improvements
 - Live Bluetooth and Location state handling
+- Battery Settings placeholder
+- Planned battery alert workflow
 
 ### Planned
 
-- Emergency Contacts
-- SMS with Location Sharing
 - WhatsApp Sharing
-- Safety Timer
 - Check-In Feature
-- Battery Monitoring
 - QR Pairing
-- Alert History
 - Guardian Dashboard
-
----
+- Secure Device Pairing
+- Auto Call Workflow
+- Safe Confirmation Popup
+- Battery Monitoring with Real ESP32 Telemetry
+- Hourly BLE Battery Updates
+- Battery Percentage Display
+- 50%, 20%, and 5% Battery Alerts
+- Alert History UI Improvements
+- Contact Priority / Reordering
+- Custom Emergency Message Settings
 
 ## Current Version
 
-v0.9
+v0.9.1
 
 Status: 🟢 Active Development
 

@@ -40,6 +40,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GuardianX">
 
+        <activity
+            android:name=".activities.BatterySettingsActivity"
+            android:exported="false" />
+
         <receiver
             android:name=".receivers.SafetyTimerReceiver"
             android:exported="false" />
