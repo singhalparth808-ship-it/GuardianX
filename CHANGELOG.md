@@ -4,6 +4,47 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.8 - Safety Timer
+
+Release Date: 07 July 2026
+
+### Added
+
+- Settings hub screen
+- Alert History access from Settings
+- Safety Timer screen
+- Demo 10-second safety timer
+- 5-minute safety timer
+- 10-minute safety timer
+- 30-minute safety timer
+- Custom safety timer input
+- Cancel safety timer option
+- Background safety timer using AlarmManager
+- Persistent timer state using SharedPreferences
+- Timer restore after app reopen
+- Automatic SOS trigger when timer ends
+- Safety Timer SOS notification and vibration
+- Safety Timer SOS SMS with location
+- Safety Timer alert history entry
+
+### Changed
+
+- Home screen bottom-right card restored from History to Settings
+- History moved inside Settings for future expansion
+- Safety Timer screen made scrollable for smaller screens
+
+### Status
+
+✅ Stable  
+✅ Safety Timer working  
+✅ Custom timer working  
+✅ Timer cancel working  
+✅ Background timer working  
+✅ Timer restore after reopen working  
+✅ Automatic SOS from timer working
+
+---
+
 ## v0.7 - Alert History
 
 Release Date: 07 July 2026

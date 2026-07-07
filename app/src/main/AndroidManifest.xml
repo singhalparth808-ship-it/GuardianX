@@ -40,6 +40,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GuardianX">
 
+        <receiver
+            android:name=".receivers.SafetyTimerReceiver"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.SafetyTimerActivity"
+            android:exported="false" />
+
         <activity
             android:name=".activities.HistoryActivity"
             android:exported="false" />

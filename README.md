@@ -30,7 +30,12 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 - Duplicate contact prevention
 - Contact delete support
 - Local Alert History
-- Hardware/App SOS history tracking
+- Hardware/App SOS history tracking 
+- Settings Hub
+- Safety Timer
+- Custom Safety Timer
+- Background Safety Timer
+- Automatic SOS from Safety Timer
 
 ### Planned
 
@@ -48,7 +53,7 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 
 ## Current Version
 
-v0.7
+v0.8
 
 Status: 🟢 Active Development
 

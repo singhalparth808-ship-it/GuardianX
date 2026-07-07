@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         );
 
         settingsCard.setOnClickListener(view ->
-                startActivity(new Intent(this, HistoryActivity.class))
+                startActivity(new Intent(this, SettingsActivity.class))
         );
     }
 

@@ -133,13 +133,18 @@ Status: ✅ Completed
 
 ---
 
-## v0.8 - Safety Features
+## v0.8 - Safety Timer
 
-Status: Upcoming
+Status: ✅ Completed
 
-- Safety Timer
-- Check-In feature
-- Safe confirmation popup
+- Added Settings hub
+- Added Safety Timer
+- Added custom timer
+- Added background timer support
+- Added timer restore after app reopen
+- Added automatic SOS trigger
+- Added timer cancel option
+- Connected Safety Timer to SMS, notification, vibration, and alert history
 
 ---
 
