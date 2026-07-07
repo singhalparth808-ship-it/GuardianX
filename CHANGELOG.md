@@ -4,6 +4,34 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.7 - Alert History
+
+Release Date: 07 July 2026
+
+### Added
+
+- AlertHistoryManager for local SOS history storage
+- Alert History screen
+- History access from home screen
+- Automatic alert logging for app SOS
+- Automatic alert logging for hardware SOS
+- Clear history option
+- Alert source tracking for App and Hardware SOS
+- Location status tracking in alert history
+
+### Changed
+
+- Home screen Settings card temporarily changed to History for demo usefulness
+
+### Status
+
+✅ Stable  
+✅ App SOS history working  
+✅ Hardware SOS history working  
+✅ Clear history working
+
+---
+
 ## v0.6 - Location + SMS Engine
 
 Release Date: 07 July 2026

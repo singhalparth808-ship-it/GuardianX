@@ -29,6 +29,8 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 - Google Maps location link included in SOS SMS
 - Duplicate contact prevention
 - Contact delete support
+- Local Alert History
+- Hardware/App SOS history tracking
 
 ### Planned
 
@@ -46,7 +48,7 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 
 ## Current Version
 
-v0.6
+v0.7
 
 Status: 🟢 Active Development
 

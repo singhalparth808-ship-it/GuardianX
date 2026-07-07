@@ -125,7 +125,7 @@ Status: ✅ Completed
 
 ## v0.7 - Alert History
 
-Status: Upcoming
+Status: ✅ Completed
 
 - Store SOS events locally
 - Show alert history

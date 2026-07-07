@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.location.LocationManager;
 import android.provider.Settings;
 import com.parteek.guardianx.utils.LocationHelper;
+import com.parteek.guardianx.managers.AlertHistoryManager;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -31,7 +32,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 public class MainActivity extends AppCompatActivity implements BLECallback {
 
     private TextView sosActionButton;
-
+    private AlertHistoryManager alertHistoryManager;
     private View locationCard;
     private View contactsCard;
     private SMSManager smsManager;
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
 
         bleManager = new BLEManager(this, this);
         smsManager = new SMSManager(this);
+        alertHistoryManager = new AlertHistoryManager(this);
 
         PermissionHelper.requestRequiredPermissions(this);
 
@@ -163,11 +165,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         );
 
         settingsCard.setOnClickListener(view ->
-                android.widget.Toast.makeText(
-                        this,
-                        "Settings coming soon",
-                        android.widget.Toast.LENGTH_SHORT
-                ).show()
+                startActivity(new Intent(this, HistoryActivity.class))
         );
     }
 
@@ -220,6 +218,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         sosActionButton.setText(R.string.hold_to_sos);
 
         NotificationHelper.showSOSAlert(this);
+        saveAlertHistory(message);
         sendSOSMessageToContacts();
 
         android.widget.Toast.makeText(
@@ -227,6 +226,26 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
                 message,
                 android.widget.Toast.LENGTH_LONG
         ).show();
+    }
+
+    private void saveAlertHistory(String message) {
+
+        if (alertHistoryManager == null) {
+            return;
+        }
+
+        String source;
+
+        if (message.equals(getString(R.string.sos_received))) {
+            source = "Hardware";
+        } else {
+            source = "App";
+        }
+
+        boolean locationIncluded =
+                LocationHelper.getLocationLink(this) != null;
+
+        alertHistoryManager.saveAlert(source, locationIncluded);
     }
 
     private void sendSOSMessageToContacts() {
