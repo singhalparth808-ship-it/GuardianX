@@ -114,7 +114,7 @@ Status: ✅ Completed
 
 ## v0.6 - Location + SMS Engine
 
-Status: Upcoming
+Status: ✅ Completed
 
 - Get phone location
 - Generate Google Maps location link

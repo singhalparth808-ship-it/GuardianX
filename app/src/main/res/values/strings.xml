@@ -25,6 +25,20 @@
     <string name="nearby_police">Nearby Police Station</string>
     <string name="nearby_hospital">Nearby Hospital</string>
     <string name="nearby_emergency_locations">Nearby Emergency Locations</string>
+    <string name="duplicate_contact">This phone number is already saved</string>
+    <string name="delete_contact">Delete contact</string>
+    <string name="sos_sms_message_with_location">SOS! GuardianX emergency triggered. Location: %1$s Call immediately.</string>
+
+    <string name="sos_sms_message_without_location">SOS! GuardianX emergency triggered. Location unavailable. Call immediately.</string>
+
+    <string name="sms_permission_required">SMS permission is required to send emergency messages</string>
+    <string name="location_unavailable">Location unavailable</string>
+    <string name="sos_sms_sent">SOS SMS sent to emergency contacts</string>
+    <string name="no_emergency_contacts">No emergency contacts saved</string>
+    <string name="sos_sms_message">SOS ALERT
+        GuardianX emergency triggered.P
+        lease contact immediately.</string>
+    <string name="sos_sms_failed">SOS triggered, but SMS could not be sent</string>
 
     <string name="emergency_contacts">Emergency Contacts</string>
     <string name="contact_name">Contact Name</string>

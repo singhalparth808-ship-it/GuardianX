@@ -24,7 +24,11 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 - Emergency Toolkit
 - Direct Emergency Calling
 - Nearby Emergency Locations using Google Maps
-- - Emergency Contacts saved locally
+- Emergency Contacts saved locally
+- SOS SMS sent to saved emergency contacts
+- Google Maps location link included in SOS SMS
+- Duplicate contact prevention
+- Contact delete support
 
 ### Planned
 
@@ -42,7 +46,7 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 
 ## Current Version
 
-v0.5
+v0.6
 
 Status: 🟢 Active Development
 

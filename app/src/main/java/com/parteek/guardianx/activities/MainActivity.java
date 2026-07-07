@@ -8,6 +8,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
 import com.parteek.guardianx.utils.NotificationHelper;
+import com.parteek.guardianx.managers.SMSManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.location.LocationManager;
 import android.provider.Settings;
+import com.parteek.guardianx.utils.LocationHelper;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
 
     private View locationCard;
     private View contactsCard;
+    private SMSManager smsManager;
     private View emergencyCard;
     private View settingsCard;
 
@@ -84,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         initializeViews();
 
         bleManager = new BLEManager(this, this);
+        smsManager = new SMSManager(this);
 
         PermissionHelper.requestRequiredPermissions(this);
 
@@ -216,6 +220,7 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         sosActionButton.setText(R.string.hold_to_sos);
 
         NotificationHelper.showSOSAlert(this);
+        sendSOSMessageToContacts();
 
         android.widget.Toast.makeText(
                 this,
@@ -224,7 +229,47 @@ public class MainActivity extends AppCompatActivity implements BLECallback {
         ).show();
     }
 
+    private void sendSOSMessageToContacts() {
 
+        if (smsManager == null) {
+            return;
+        }
+
+        if (!smsManager.hasEmergencyContacts()) {
+            android.widget.Toast.makeText(
+                    this,
+                    R.string.no_emergency_contacts,
+                    android.widget.Toast.LENGTH_SHORT
+            ).show();
+            return;
+        }
+
+        String locationLink = LocationHelper.getLocationLink(this);
+
+        String smsMessage;
+
+        if (locationLink != null) {
+            smsMessage = getString(R.string.sos_sms_message_with_location, locationLink);
+        } else {
+            smsMessage = getString(R.string.sos_sms_message_without_location);
+        }
+
+        boolean sent = smsManager.sendSOSMessage(smsMessage);
+
+        if (sent) {
+            android.widget.Toast.makeText(
+                    this,
+                    R.string.sos_sms_sent,
+                    android.widget.Toast.LENGTH_SHORT
+            ).show();
+        } else {
+            android.widget.Toast.makeText(
+                    this,
+                    R.string.sos_sms_failed,
+                    android.widget.Toast.LENGTH_SHORT
+            ).show();
+        }
+    }
 
     private void startBleConnection() {
 

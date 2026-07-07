@@ -4,6 +4,37 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v0.6 - Location + SMS Engine
+
+Release Date: 07 July 2026
+
+### Added
+
+- SMS permission support
+- ContactStorageManager for centralized contact access
+- SMSManager for sending SOS messages
+- SOS SMS sending to saved emergency contacts
+- Google Maps location link in SOS messages
+- LocationHelper for last known location access
+- Duplicate contact prevention
+- Delete contact option with trash icon
+
+### Changed
+
+- ContactsActivity now uses ContactStorageManager
+- SOS message shortened for faster SMS delivery
+- Saved contact order now works as emergency priority order
+
+### Status
+
+✅ Stable  
+✅ SOS SMS working  
+✅ Location link working  
+✅ Duplicate contact blocking working  
+✅ Contact delete working
+
+---
+
 ## v0.5 - Emergency Contacts
 
 Release Date: 06 July 2026
