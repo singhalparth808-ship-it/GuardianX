@@ -60,10 +60,9 @@ GuardianX is being built as a minimal but expandable safety platform. The curren
 
 ## Current Version
 
-v0.9.1
+v1.0
 
-Status: 🟢 Active Development
-
+GuardianX v1.0 is the first college-demo-ready release of the project. It includes hardware SOS, app SOS, emergency contacts, SMS with location, alert history, emergency toolkit, safety timer, and battery settings placeholder.
 ---
 
 ## Project Structure

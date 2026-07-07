@@ -171,18 +171,21 @@ Status: ✅ Completed
 
 ---
 
-## v1.0 - First Public Demo Release
+## v1.0 - First Demo Release
 
-Status: Upcoming
+Status: ✅ Completed
 
 - Stable college demo build
 - Hardware SOS
 - App SOS
 - Emergency toolkit
 - Emergency contacts
-- SMS/location workflow
+- SMS with location
+- Alert history
+- Safety timer
+- Battery settings placeholder
 - Clean UI
-- GitHub documentation
+- GitHub-ready documentation
 
 ---
 

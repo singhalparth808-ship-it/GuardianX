@@ -4,6 +4,37 @@ All notable changes to this project will be documented here.
 
 ---
 
+## v1.0 - First Demo Release
+
+Release Date: 07 July 2026
+
+### Added
+
+- First demo-ready GuardianX release
+- Complete hardware SOS demo flow
+- Complete in-app SOS demo flow
+- Emergency contacts
+- SOS SMS with Google Maps location link
+- Emergency notification and vibration
+- Emergency Toolkit
+- Nearby emergency locations
+- Alert History
+- Safety Timer
+- Settings Hub
+- Battery Settings placeholder
+
+### Status
+
+✅ Stable  
+✅ Demo-ready  
+✅ Hardware SOS working  
+✅ App SOS working  
+✅ SMS with location working  
+✅ Safety Timer working  
+✅ Emergency Toolkit working
+
+---
+
 ## v0.9.1 - Battery Settings Placeholder
 
 Release Date: 07 July 2026
